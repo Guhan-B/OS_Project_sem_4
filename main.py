@@ -23,14 +23,18 @@ height, width, channels = image.shape
 
 # preprocessing image
 blob = cv.dnn.blobFromImage(image, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
-# for b in blob:
-#     for i, blobImage in enumerate(b):
-#         cv.imshow(str(i), blobImage)
 
 # detecting objects
 net.setInput(blob)
 outs = net.forward(outputLayers)
-print(outs)
+
+# print(outs)
+
+# for b in blob:
+#     for i, blobImage in enumerate(b):
+#         cv.imshow(str(i), blobImage)
+
+
 
 # variables for holding results
 class_ids = []
